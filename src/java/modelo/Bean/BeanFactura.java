@@ -9,12 +9,12 @@ package modelo.Bean;
  *
  * @author Andres Montoya
  */
-public class Factura {
+public class BeanFactura {
     
     private String id_factura;
     private String precio;
 
-    public Factura(String id_factura, String precio) {
+    public BeanFactura(String id_factura, String precio) {
         this.id_factura = id_factura;
         this.precio = precio;
     }

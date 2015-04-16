@@ -14,20 +14,31 @@ public class BeanVuelo {
     private String origen;
     private String destino;
     private String aerolinea;
+    private int tiempo_vuelo;
     private int precio;
     private int n_puestos;
 
-    public BeanVuelo(String idvuelo, String salida, String llegada, String origen, String destino, String aerolinea, int precio, int n_puestos) {
+    public BeanVuelo(String idvuelo, String salida, String llegada, String origen, String destino, String aerolinea,int tiempo_vuelo, int precio, int n_puestos) {
         this.idvuelo = idvuelo;
         this.salida = salida;
         this.llegada = llegada;
         this.origen = origen;
         this.destino = destino;
         this.aerolinea = aerolinea;
+        this.tiempo_vuelo = tiempo_vuelo;
         this.precio = precio;
         this.n_puestos = n_puestos;
     }
 
+    public int getTiempo_vuelo() {
+        return tiempo_vuelo;
+    }
+
+    public void setTiempo_vuelo(int tiempo_vuelo) {
+        this.tiempo_vuelo = tiempo_vuelo;
+    }
+
+        
     public String getIdvuelo() {
         return idvuelo;
     }

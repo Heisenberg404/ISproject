@@ -9,8 +9,8 @@
 <html>
 <head>
     <title>RegistroUsuario</title>
-    <link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="../layout/styles/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="layout/styles/bootstrap/css/bootstrap.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
@@ -23,7 +23,7 @@
     </div>
     <div id="topnav">
       <ul>
-        <li ><a href="../redirect.jsp">Inicio</a></li>
+        <li ><a href="redirect.jsp">Inicio</a></li>
         <li><a href="VerOferta.html">Consultar Ofertas</a></li>
         <li class="active"><a href="login.html">Ingresar a mi cuenta</a></li>
       </ul>
@@ -101,8 +101,8 @@
     <br class="clear" />
   </div>
 </div>
-    <script src="../layout/styles/bootstrap/js/jquery.js"></script>
-    <script src="../layout/styles/bootstrap/js/bootstrap.min.js"></script>
+    <script src="layout/styles/bootstrap/js/jquery.js"></script>
+    <script src="layout/styles/bootstrap/js/bootstrap.min.js"></script>
     
 </body>
 </html>

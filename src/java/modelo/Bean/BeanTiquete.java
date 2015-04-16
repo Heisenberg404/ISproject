@@ -9,7 +9,7 @@ package modelo.Bean;
  *
  * @author Andres Montoya
  */
-public class Tiquete {
+public class BeanTiquete {
     
     private String id_tiquete;
     private String id_usuario;
@@ -17,7 +17,7 @@ public class Tiquete {
     private String in_factura;
     private String id_vuelo;
 
-    public Tiquete(String id_tiquete, String id_usuario, int precio, String in_factura, String id_vuelo) {
+    public BeanTiquete(String id_tiquete, String id_usuario, int precio, String in_factura, String id_vuelo) {
         this.id_tiquete = id_tiquete;
         this.id_usuario = id_usuario;
         this.precio = precio;

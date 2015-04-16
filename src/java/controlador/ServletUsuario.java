@@ -57,7 +57,8 @@ public class ServletUsuario extends HttpServlet {
         
         if (DUsuario.agregarRegistro())
             {
-            request.setAttribute("mensaje", mExito);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+            //request.setAttribute("mensaje", mExito);
             }
         else
             {
