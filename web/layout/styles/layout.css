@@ -6,7 +6,7 @@
 @import url("tables.css");
 
 html{overflow-y:scroll;}
-#myBody{margin-left: 2px; padding:auto ; font-size:11px; font-family:verdana, Arial, Helvetica, sans-serif; color:#525252; background-color:#131313;}
+#myBody{margin-left: 2px; padding:auto ; font-size:12px; font-family:verdana, Arial, Helvetica, sans-serif; color:#525252; background-color:#131313;}
 
 .justify{text-align:justify;}
 .bold{font-weight:bold;}
@@ -72,7 +72,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #latest .fl_left2{display:block; float:left; width:400px; height:280px; padding:10px; color:#333333; background-color:#FDC609;}
 #latest .fl_center2{display:block; float:none; width:942.5px; height:200px; padding:20px; color:#333333; background-color:#FDC609;}
 #latest .fl_center3{display:block; float:none; width:942.5px; height:230px; padding:20px; color:#333333; background-color:#FDC609;}
-#latest .fl_center4{display:block; float:none; width:942.5px; height:480px; padding:20px; color:#333333; background-color:#FDC609;}
+#latest .fl_center4{display:block; float:none; width:942.5px; height:380px; padding:20px; color:#333333; background-color:#FDC609;}
 
 /* ----------------------------------------------Intro------------------------------------- */
 

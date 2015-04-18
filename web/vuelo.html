@@ -27,52 +27,34 @@
     <div id="latest">
         
         <div class="fl_center4">
-          <b>INFORMACION DEL VUELO</b>  
-            <div id="intro">
-        <li>   
-        
-       <input class="form-control"  id="id_vuelo" type="text" placeholder="Digite codigo de vuelo"/> <br> 
-       <input class="form-control"  id="fh_salida" type="text" placeholder="Digite la fecha y hora de salida"/> <br> 
-       <input class="form-control"  id="fh_llegada" type="text" placeholder="Digite la fecha y hora de llegada"/> <br> 
-       <input class="form-control"  id="origen" type="text" placeholder="Digite origen de vuelo"/> <br> 
-       <input class="form-control"  id="destino" type="text" placeholder="Digite destino de vuelo"/> <br>
-        </li>
-        <li>      
-        <input class="form-control"  id="tiempo" type="text" placeholder="Digite tiempo de vuelo"/> <br> 
-       <input class="form-control"  id="aerolinea" type="text" placeholder="Digite la aerolinea"/> <br> 
-       <input class="form-control"  id="n_puestos" type="text" placeholder="Digite numero de puestos para el vuelo"/> <br> 
-       <input class="form-control"  id="precio" type="text" placeholder="Digite el precio del vuelo"/> <br> 
-        </li>
-            </div>
-        <div class="center"><button class="btn-custom btn-lg" id="btnagregar"  />Agregar</div><br>
-        <div class="center"><button class="btn-custom btn-lg" id="btnbuscar" />Buscar</div><br>
-        <div class="center"><button class="btn-custom btn-lg" id="btneliminar" />Eliminar</div><br>
-        <div class="center"><button class="btn-custom btn-lg" id="btnmodificar" />Modificar</div><br>
-      </div>
-            
-    <br class="clear" /> 
-  </div>
-</div>
- <div class="wrapper">
-  <div id="footer">
-    <div id="newsletter">
-      <h2>Dejanos tu correo para enviarte nuestras promociones !</h2>
-      <form action="#" method="post">
-        <fieldset>
-          <legend>News Letter</legend>
-          <input type="text" value="Enter Email Here&hellip;"  onfocus="this.value=(this.value=='Enter Email Here&hellip;')? '' : this.value ;" />
-          <input type="submit" name="news_go" id="news_go" value="GO" />
-        </fieldset>
-      </form>
-      <p>Para darte de baja <a href="#">click aqui &raquo;</a></p>
-    </div>
-    <div class="footbox">
-      <h2>Siguenos en!</h2>
-      <ul>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-       </ul>
+            <div class="center"><b>INFORMACION DEL VUELO</b></div> <br> 
+            <form class="group-horizontal">
+                <div class="form-group">   
+        <div class="col-lg-5"><input class="form-control"  id="id_vuelo" type="text" placeholder="Digite codigo de vuelo"/></div> 
+        <div class="col-lg-5"><input class="form-control"  id="fh_salida" type="text" placeholder="Digite la fecha y hora de salida"/></div> <br> 
+       </div>
+        <div class="form-group">   
+        <div class="col-lg-5"><input class="form-control"  id="fh_llegada" type="text" placeholder="Digite la fecha y hora de llegada"/></div> 
+       <div class="col-lg-5"><input class="form-control"  id="origen" type="text" placeholder="Digite el origen del vuelo"/></div> <br> 
+       </div>
+       <div class="form-group">   
+        <div class="col-lg-5"><input class="form-control"  id="destino" type="text" placeholder="Digite el destino del vuelo"/></div> 
+       <div class="col-lg-5"><input class="form-control"  id="tiempo" type="text" placeholder="Digite el tiempo de vuelo"/></div> <br> 
+       </div>
+       <div class="form-group">   
+        <div class="col-lg-5"><input class="form-control"  id="aerolinea" type="text" placeholder="Digite la aerolinea"/></div> 
+       <div class="col-lg-5"><input class="form-control"  id="n_puestos" type="text" placeholder="Digite numero de puestos del vuelo"/></div> <br> 
+       </div>
+       <div class="form-group">   
+       <div class="col-lg-5"><input class="form-control"  id="precio" type="text" placeholder="Digite el precio del vuelo"/></div> <br> 
+       </div><br><br>
+       </form>
+        <div class="form-group">  
+        <div class="col-lg-3"><button class="btn-custom btn-lg" id="btnagregar"><span class="glyphicon glyphicon-floppy-disk"></span> Agregar</button></div>
+        <div class="col-lg-3"><button class="btn-custom btn-lg" id="btnbuscar"><span class="glyphicon glyphicon-search"></span> Buscar</button></div>
+        <div class="col-lg-3"><button class="btn-custom btn-lg" id="btneliminar"><span class="glyphicon glyphicon-remove"></span> Eliminar</button></div>
+        <div class="col-lg-3"><button class="btn-custom btn-lg" id="btnmodificar"><span class="glyphicon glyphicon-edit"></span> Modificar</button></div>
+        </div>
     </div>
     
     
