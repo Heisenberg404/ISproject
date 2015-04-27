@@ -135,12 +135,12 @@
                 <div class="modal-body">
                     <div class="row">
                             <div class="col-sm-6 col-md-6">
-                                <a href="pages/loginAdmin.html" class="thumbnail">
+                                <a href="loginAdmin.html" class="thumbnail">
                                   <img src="images/admin.jpg" alt="1">
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-6">
-                                <a href="pages/login.html" class="thumbnail">
+                                <a href="login.html" class="thumbnail">
                                   <img src="images/cliente.jpg" alt="2">
                                 </a>
                             </div>

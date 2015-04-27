@@ -1,7 +1,7 @@
 <head>
-    <title>Ingreso de sesion</title>
+    <title> Usuario</title>
     <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="layout/styles/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="layout/styles/bootstrap/css/bootstrap.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
@@ -10,46 +10,48 @@
 <div class="wrapper">
   <div id="header">
     <div id="logo">
-        <a href="index.html"><img id="logo" src="images/EasyTicketsLogo.png" alt="" /></a>
+      <h1><a href="../index.html">TIQUETES AL AIRE</a></h1>
+      <p>"los mas economicos del cielo y la tierra"</p>
     </div>
     <div id="topnav">
       <ul>
         <li ><a href="index.jsp">Inicio</a></li>
         <li><a href="VerOferta.html">Consultar Ofertas</a></li>
-        <li class="active"><a href="#sesion" data-toggle="modal">Ingresar a mi cuenta</a></li>
+        <li class="last"><a href="#sesion" data-toggle="modal">Ingresar a mi cuenta</a></li>
+        
       </ul>
     </div>
     <br class="clear" />
   </div>
 </div>
 <div class="wrapper">
-  <div id="latest">
-    <div class="fl_left2">
-        <h2 >Ingresa los datos para iniciar sesion</h2> <br>
-       <input class="form-control"  id="correo" type="text" placeholder="Digite su correo electronico"/> <br> <br>
-       <input class="form-control"  id="contrasena" type="text" placeholder="Digite su contraseña"/> <br> 
-       <div><button class="btn btn-primary" id="btnIngresar" />Ingresar</div>
-       <h3 class="center"><a href="usuarioAdmin.html">Registrase</a></h3>
+    <div id="latest">
+        <div id="intro">
+        <div class="fl_center4">
+            <div class="center">
+            <li>   
+            <b>Informacion de contacto</b> <br><br>
+       <input class="form-control"  id="cedula" type="text" placeholder="Digite su cedula"/> <br> <br>
+       <input class="form-control"  id="nombre" type="text" placeholder="Digite su nombre"/> <br> <br>
+       <input class="form-control"  id="apellido" type="text" placeholder="Digite su apellido"/> <br> <br>
+       <input class="form-control"  id="email" type="text" placeholder="Digite su correo electronico"/> <br> <br>
+       
+        </li>
+       <li><br><br>
+       <input class="form-control"  id="telefono" type="text" placeholder="Digite su telefono"/> <br> <br>
+       <input class="form-control"  id="Cargo" type="text" placeholder="Digite tipo de usuario"/> <br> <br>
+       <input class="form-control"  id="Direccion" type="text" placeholder="Digite la direccion de la residencia"/> <br> <br>
+       <input class="form-control"  id="contrasena" type="text" placeholder="Digite su contrasena"/> <br> <br><br><br>
+       <div class="center"><button class="btn-custom" id="btnRegistrar" />Registrar</div>
+        </li>
+     </div>  
     </div>
-    <br class="clear" />
-  </div>
-    
+    <br class="clear" /> 
+    </div>
+    </div>
 </div>
- <br>
- 
-<div class="wrapper">
-  <div id="container">
-    <div id="content">
-      <h2> Que es "tiquetes al aire"</h2>
-      <p>Somos una empresa creada para facilitar la compra de los usuarios de tiquetes para volar, ayudando
-          a nuestros clientes en la gestion y abordaje, ademas brindando las mejores asesorias sobre los destinos turisticos y en que temporada
-          es mas recomendado viajar.<a href="http://www.os-templates.com/">Tiquetes al aire </a>.</p>
-      </div>
-    
-    <br class="clear" />
-  </div>
-</div>
- <div class="wrapper">
+     <br><br>
+    <div class="wrapper">
   <div id="footer">
     <div id="newsletter">
       <h2>Dejanos tu correo para enviarte nuestras promociones !</h2>
@@ -75,6 +77,9 @@
     <br class="clear" />
   </div>
 </div>
+ 
+
+
 <div class="wrapper">
   <div id="copyright">
     <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Desarrollado por AM & AA</a></p>
@@ -93,19 +98,19 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-6">
                             <a href="loginAdmin.html" class="thumbnail">
-                                <img src="images/admin.jpg" alt="1">
+                                <img src="../images/admin.jpg" alt="1">
                             </a>
                         </div>
                         <div class="col-sm-6 col-md-6">
                             <a href="login.html" class="thumbnail">
-                                <img src="images/cliente.jpg" alt="2">
+                                <img src="../images/cliente.jpg" alt="2">
                             </a>
                         </div>
                    </div>
                  </div>
             </div>
         </div>
-    </div>
+    </div>       
     <script src="layout/styles/bootstrap/js/jquery.js"></script>
     <script src="layout/styles/bootstrap/js/bootstrap.min.js"></script>
 </body>
