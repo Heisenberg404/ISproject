@@ -34,10 +34,10 @@
             <form class="group-horizontal">
                 <div class="form-group">   
         <div class="col-lg-5"><input class="form-control"  id="id_vuelo" type="text" placeholder="Digite codigo de vuelo"/></div> 
-        <div class="col-lg-5"><input class="form-control"  id="fecha" type="text" placeholder="Digite la fecha y hora de salida"/></div> <br> 
+        <div class="col-lg-5"><input class="form-control fecha"   type="text" placeholder="Digite la fecha y hora de salida"/></div> <br> 
        </div>
         <div class="form-group">   
-        <div class="col-lg-5"><input class="form-control"  id="fh_llegada" type="text" placeholder="Digite la fecha y hora de llegada"/></div> 
+        <div class="col-lg-5"><input class="form-control fecha" type="text" placeholder="Digite la fecha y hora de llegada"/></div> 
        <div class="col-lg-5"><input class="form-control"  id="origen" type="text" placeholder="Digite el origen del vuelo"/></div> <br> 
        </div>
        <div class="form-group">   
@@ -66,7 +66,6 @@
 
 
 <div class="wrapper">
-    <input type="text" name="fecha" id="fecha"/>
   <div id="copyright">
     <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Desarrollado por AM & AA</a></p>
     <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
@@ -98,16 +97,8 @@
         </div>
     </div>       
     <script src="layout/styles/bootstrap/js/jquery.js"></script>
+    <script src='layout/styles/bootstrap/js/jquery-ui-1.10.4.custom.min.js'></script>
     <script src="layout/styles/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-            $(function() {
-                $("#fecha").datepicker({
-                    currentText:"now",
-                    dateFormat: "yy-mm-dd",
-                    appendText: "(yyyy-mm-dd)"
-                });
-            });
-           
-        </script>
+    <script type="text/javascript" src="layout/styles/bootstrap/js/calendario.js"></script>
 </body>
 </html>
