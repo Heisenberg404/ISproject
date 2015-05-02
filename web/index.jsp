@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
 </head>
 <body id="myBody">
-<div class="wrapper">
+    <div class="wrapper">
   <div id="header">
     <div id="logo">
         <a href="index.html"><img id="logo" src="images/EasyTicketsLogo.png" alt="" /></a>
@@ -21,23 +21,23 @@
     <br class="clear" />
   </div>
 </div>
-<div class="wrapper">
-  <div id="latest">
-    <div class="fl_left"><a href="#"><img src="images/miami.jpg" alt="" /></a></div>
-    <div class="fl_right">
-      <h2>Conozca el paraiso de Miami con nosotros.</h2>
-      <p>Miami es una ciudad estadounidense ubicada en la parte sureste de Florida 
-          alrededor del río Miami, entre los Everglades y el océano Atlántico.</p>
-      <ul>
-        <li><a href="#"><img src="images/miamiSmall1.jpg" alt="" /></a></li>
-        <li><a href="#"><img src="images/miamiSmall2.jpg" alt="" /></a></li>
-    <li class="last"><a href="#"><img src="images/miamiSmall3.jpg" alt="" /></a></li>
-      </ul>
+    <div class="wrapper">
+    <div id="latest">
+      <div class="fl_left"><a href="#"><img src="images/miami.jpg" alt="" /></a></div>
+      <div class="fl_right">
+        <h2>Conozca el paraiso de Miami con nosotros.</h2>
+        <p>Miami es una ciudad estadounidense ubicada en la parte sureste de Florida 
+            alrededor del río Miami, entre los Everglades y el océano Atlántico.</p>
+        <ul>
+          <li><a href="#"><img src="images/miamiSmall1.jpg" alt="" /></a></li>
+          <li><a href="#"><img src="images/miamiSmall2.jpg" alt="" /></a></li>
+      <li class="last"><a href="#"><img src="images/miamiSmall3.jpg" alt="" /></a></li>
+        </ul>
+      </div>
+      <br class="clear" />
     </div>
-    <br class="clear" />
-  </div>
 </div>
-<div class="wrapper">
+    <div class="wrapper">
   <div id="intro">
     <ul>
       <li >
@@ -67,10 +67,11 @@
     <br class="clear" />
   </div>
 </div>
-<div class="wrapper">
+    <div class="wrapper">
   <div id="container">
     <div id="content">
-      <h2> Que es "tiquetes al aire"</h2>
+      <%= session.getAttribute( "email" ) %>
+      <h2> Que es "EasyTickets"</h2>
       <p>Somos una empresa creada para facilitar la compra de los usuarios de tiquetes para volar, ayudando
           a nuestros clientes en la gestion y abordaje, ademas brindando las mejores asesorias sobre los destinos turisticos y en que temporada
           es mas recomendado viajar.<a href="http://www.os-templates.com/">Tiquetes al aire </a>.</p>
@@ -92,7 +93,7 @@
     <br class="clear" />
   </div>
 </div>
-<div class="wrapper">
+    <div class="wrapper">
   <div id="footer">
     <div id="newsletter">
       <h2>Dejanos tu correo para enviarte nuestras promociones !</h2>
@@ -118,13 +119,13 @@
     <br class="clear" />
   </div>
 </div>
-<div class="wrapper">
-  <div id="copyright">
-    <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Desarrollado por AM & AA</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
-    <br class="clear" />
-  </div>
-</div>
+    <div class="wrapper">
+      <div id="copyright">
+        <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Desarrollado por AM & AA</a></p>
+        <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+        <br class="clear" />
+      </div>
+    </div>
     <div class="modal fade" id="sesion" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -140,14 +141,14 @@
                                 </a>
                             </div>
                             <div class="col-sm-6 col-md-6">
-                                <a href="login.html" class="thumbnail">
+                                <a href="loginUser.jsp" class="thumbnail">
                                   <img src="images/cliente.jpg" alt="2">
                                 </a>
                             </div>
-                </div>
+                    </div>
                 
-           </div>
-        </div>
+                </div>
+            </div>
         </div>
 
     </div>
