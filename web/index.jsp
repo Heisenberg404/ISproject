@@ -7,20 +7,21 @@
 </head>
 <body id="myBody">
     <div class="wrapper">
-  <div id="header">
-    <div id="logo">
-        <a href="index.html"><img id="logo" src="images/EasyTicketsLogo.png" alt="" /></a>
+        <div id="header">
+            <div align="right"><h1>alexaTeAmo</h1></div>
+            <div id="logo">
+                <a href="index.html"><img id="logo" src="images/EasyTicketsLogo.png" alt="" /></a>
+            </div>
+        <div id="topnav">
+            <ul>
+                <li class="active"><a href="index.jsp">Inicio</a></li>
+                <li><a href="VerOferta.html">Consultar Ofertas</a></li>
+                <li class="last"><a href="#sesion" data-toggle="modal">Ingresar a mi cuenta</a></li>
+            </ul>
+        </div>
+        <br class="clear" />
+        </div>
     </div>
-    <div id="topnav">
-      <ul>
-        <li class="active"><a href="index.jsp">Inicio</a></li>
-        <li><a href="VerOferta.html">Consultar Ofertas</a></li>
-        <li class="last"><a href="#sesion" data-toggle="modal">Ingresar a mi cuenta</a></li>
-      </ul>
-    </div>
-    <br class="clear" />
-  </div>
-</div>
     <div class="wrapper">
     <div id="latest">
       <div class="fl_left"><a href="#"><img src="images/miami.jpg" alt="" /></a></div>
@@ -136,7 +137,7 @@
                 <div class="modal-body">
                     <div class="row">
                             <div class="col-sm-6 col-md-6">
-                                <a href="loginAdmin.html" class="thumbnail">
+                                <a href="LoginAdmin.jsp" class="thumbnail">
                                   <img src="images/admin.jpg" alt="1">
                                 </a>
                             </div>

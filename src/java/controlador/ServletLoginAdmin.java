@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controlador;
 
 import java.io.IOException;
@@ -12,37 +8,36 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import modelo.Dao.DAO_IS_user;
+import modelo.Dao.DAO_IS_admin;
 
 /**
  *
  * @author Andres Montoya
  */
-@WebServlet(name = "ServletLoginUser", urlPatterns = {"/ServletLoginUser"})
-public class ServletLoginUser extends HttpServlet {
+@WebServlet(name = "ServletLoginAdmin", urlPatterns = {"/ServletLoginAdmin"})
+public class ServletLoginAdmin extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         
-        String email = request.getParameter("txtCorreo");
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String alias = request.getParameter("txtUsuario");
         String pass = request.getParameter("txtPass");
         
-        HttpSession sesion = request.getSession(true);
-        sesion.setAttribute("email", email);
-        DAO_IS_user Iuser = new DAO_IS_user();
+        DAO_IS_admin Iadmin = new DAO_IS_admin();
         
-        if (Iuser.validar(email, pass))
+        if (Iadmin.validar(alias, pass))
         {
             //es necesario cambiar el destino al que se enviara al usuario al momento de iniciar sesion!
-            request.getRequestDispatcher("consultaVuelo.jsp").forward(request, response);
+            request.getRequestDispatcher("adminVuelo.jsp").forward(request, response);
         }
         else
         {
-            request.setAttribute("errorInicioUser", "<script>alert('Usuario y/o contraseña no validas')</script>");
-            request.getRequestDispatcher("LoginUser.jsp").forward(request, response);
-        } 
-        
+            request.setAttribute("errorInicioAdmin", "<script>alert('Usuario y/o contraseña no validas')</script>");
+            request.getRequestDispatcher("LoginAdmin.jsp").forward(request, response);
+        }    
+//        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
