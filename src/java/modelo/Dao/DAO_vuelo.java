@@ -18,8 +18,10 @@ public class DAO_vuelo extends ClassConex {
     public boolean encontrado=false;
     public boolean listo = false;
     public String id_vuelo;
-    public String hora_fecha_llegada;
-    public String hora_fecha_salida;
+    public String fechaLlegada;
+    public String fechaSalida;
+    public String horaLlegada;
+    public String horaSalida;
     public int tiempo;
     public String origen;
     public String destino;
@@ -36,8 +38,10 @@ public class DAO_vuelo extends ClassConex {
             st = conn.createStatement();
             
             id_vuelo = vuelo.getIdvuelo();
-            hora_fecha_llegada = vuelo.getLlegada();
-            hora_fecha_salida = vuelo.getSalida();
+            fechaLlegada = vuelo.getFechaLlegada();
+            fechaSalida = vuelo.getFechaSalida();
+            horaLlegada = vuelo.getHoraLlegada();
+            horaSalida = vuelo.getHoraSalida();
             tiempo = vuelo.getTiempo_vuelo();
             origen = vuelo.getOrigen();
             destino = vuelo.getDestino();
@@ -57,7 +61,7 @@ public class DAO_vuelo extends ClassConex {
     {
         try 
         {
-            st.executeUpdate("insert into vuelo values('"+id_vuelo+"','"+hora_fecha_salida+"','"+hora_fecha_llegada+"','"+tiempo+"','"+origen+"','"+destino+"','"+aerolinea+"','"+precio+"','"+asientos+"');");
+            st.executeUpdate("insert into vuelo values('"+id_vuelo+"','"+fechaSalida+"','"+fechaLlegada+"','"+tiempo+"','"+origen+"','"+destino+"','"+aerolinea+"','"+precio+"','"+asientos+"','"+horaSalida+"','"+horaLlegada+"');");
             listo=true;
            
         }
@@ -88,7 +92,7 @@ public class DAO_vuelo extends ClassConex {
     { //opcion 3.
         try 
         {
-            st.executeUpdate("update  vuelo set horayfecha_salida='"+hora_fecha_salida+"',horayfecha_llegada='"+hora_fecha_llegada+"',tiempo='"+tiempo+"',origen='"+origen+"',destino='"+destino+"',aerolinea='"+aerolinea+"',precio='"+precio+"',asientos='"+asientos+"' where id_vuelo='"+id_vuelo+"';");
+            st.executeUpdate("update  vuelo set fechaSalida='"+fechaSalida+"',fechaLlegada='"+fechaLlegada+"',tiempo='"+tiempo+"',origen='"+origen+"',destino='"+destino+"',aerolinea='"+aerolinea+"',precio='"+precio+"',asientos='"+asientos+"',horaSalida='"+horaSalida+"',horaLlegada='"+horaLlegada+"' where id_vuelo='"+id_vuelo+"';");
             listo=true;
            
         }
@@ -109,13 +113,13 @@ public class DAO_vuelo extends ClassConex {
          return rs;
     }
 
-    public ResultSet listarTabla() { //opcion 5.
-        try {        
-            rs = st.executeQuery("SELECT id_cliente,nom_cliente,ape_cliente, genero_cliente  FROM cliente order by id_cliente;");
-        } catch (SQLException ex) {
-            Logger.getLogger(DAO_vuelo.class.getName()).log(Level.SEVERE, null, ex);
-        }
-         return rs;
-        
-    }
+//    public ResultSet listarTabla() { //opcion 5.
+//        try {        
+//            rs = st.executeQuery("SELECT id_cliente,nom_cliente,ape_cliente, genero_cliente  FROM cliente order by id_cliente;");
+//        } catch (SQLException ex) {
+//            Logger.getLogger(DAO_vuelo.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//         return rs;
+//        
+//    }
 }

@@ -39,33 +39,37 @@
     <div id="latest">
         <div class="fl_center4">
             <div class="center"><b>INFORMACION DEL VUELO</b></div> <br> 
-            <form class="group-horizontal">
+            <form class="group-horizontal" action="ServletVuelo" method="Post">
                 <div class="form-group">   
-        <div class="col-lg-5"><input class="form-control"  id="id_vuelo" type="text" placeholder="Digite codigo de vuelo"/></div> 
-        <div class="col-lg-5"><input class="form-control fecha"   type="text" placeholder="Digite la fecha y hora de salida"/></div> <br> 
+                    <div class="col-lg-5"><input class="form-control" name="txtIdVuelo"  id="id_vuelo" type="text" placeholder="Digite codigo de vuelo"/></div> 
+        <div class="col-lg-5"><input class="form-control fecha" name="txtFechaS"   type="text" placeholder="Digite la fecha de salida"/></div> <br> 
        </div>
         <div class="form-group">   
-        <div class="col-lg-5"><input class="form-control fecha" type="text" placeholder="Digite la fecha y hora de llegada"/></div> 
-       <div class="col-lg-5"><input class="form-control"  id="origen" type="text" placeholder="Digite el origen del vuelo"/></div> <br> 
+        <div class="col-lg-5"><input class="form-control fecha" name="txtFechaL" type="text" placeholder="Digite la fecha de llegada"/></div> 
+       <div class="col-lg-5"><input class="form-control"  name="txtHoraS" type="text" placeholder="Digite la hora de salida"/></div> <br> 
        </div>
        <div class="form-group">   
-        <div class="col-lg-5"><input class="form-control"  id="destino" type="text" placeholder="Digite el destino del vuelo"/></div> 
-       <div class="col-lg-5"><input class="form-control"  id="tiempo" type="text" placeholder="Digite el tiempo de vuelo"/></div> <br> 
+        <div class="col-lg-5"><input class="form-control" name="txtHoraL" type="text" placeholder="Digite la hora de llegada"/></div> 
+       <div class="col-lg-5"><input class="form-control"  name="txtOrigen" type="text" placeholder="Digite el origen del vuelo"/></div> <br> 
        </div>
        <div class="form-group">   
-        <div class="col-lg-5"><input class="form-control"  id="aerolinea" type="text" placeholder="Digite la aerolinea"/></div> 
-       <div class="col-lg-5"><input class="form-control"  id="n_puestos" type="text" placeholder="Digite numero de puestos del vuelo"/></div> <br> 
+        <div class="col-lg-5"><input class="form-control"  name="txtDestino" type="text" placeholder="Digite el destino del vuelo"/></div> 
+       <div class="col-lg-5"><input class="form-control"  name="txtTiempo" type="text" placeholder="Digite el tiempo de vuelo"/></div> <br> 
        </div>
        <div class="form-group">   
-       <div class="col-lg-5"><input class="form-control"  id="precio" type="text" placeholder="Digite el precio del vuelo"/></div> <br> 
+        <div class="col-lg-5"><input class="form-control"  name="txtAerolinea" type="text" placeholder="Digite la aerolinea"/></div> 
+       <div class="col-lg-5"><input class="form-control"  name="txtN_puestos" type="text" placeholder="Digite numero de puestos del vuelo"/></div> <br> 
+       </div>
+       <div class="form-group">   
+       <div class="col-lg-5"><input class="form-control"  name="txtPrecio" type="text" placeholder="Digite el precio del vuelo"/></div> <br> 
        </div><br><br>
-       </form>
-        <div class="form-group">  
-        <div class="col-lg-3"><button class="btn-custom btn-lg" id="btnagregar"><span class="glyphicon glyphicon-floppy-disk"></span> Agregar</button></div>
+       <div class="form-group">  
+           <div class="col-lg-3"><button class="btn-custom btn-lg" id="btnagregar" onclick=""><span class="glyphicon glyphicon-floppy-disk"></span> Agregar</button></div>
         <div class="col-lg-3"><button class="btn-custom btn-lg" id="btnbuscar"><span class="glyphicon glyphicon-search"></span> Buscar</button></div>
         <div class="col-lg-3"><button class="btn-custom btn-lg" id="btneliminar"><span class="glyphicon glyphicon-remove"></span> Eliminar</button></div>
         <div class="col-lg-3"><button class="btn-custom btn-lg" id="btnmodificar"><span class="glyphicon glyphicon-edit"></span> Modificar</button></div>
         </div>
+       </form>
     </div>
     <br class="clear" />
   </div>

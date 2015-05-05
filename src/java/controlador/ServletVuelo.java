@@ -43,9 +43,11 @@ public class ServletVuelo extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         int opcion=Integer.parseInt(request.getParameter("txtOpcion"));
-        String idVuelo = request.getParameter("txtidVuelo");
-        String hfSalida = request.getParameter("txtfhSalida");
-        String hfLlegada = request.getParameter("txtfhLlegada");
+        String idVuelo = request.getParameter("txtIdVuelo");
+        String FSalida = request.getParameter("txtFechaS");
+        String FLlegada = request.getParameter("txtFechaL");
+        String HSalida = request.getParameter("txtHoraS");
+        String HLlegada = request.getParameter("txtHoraL");
         String origen = request.getParameter("txtorigen");
         String destino = request.getParameter("txtDestino");
         String aerolinea = request.getParameter("txtAerolinea");
@@ -53,7 +55,7 @@ public class ServletVuelo extends HttpServlet {
         int precio = Integer.parseInt(request.getParameter("txtAerolinea"));
         int nPuestos = Integer.parseInt(request.getParameter("txtNpuestos"));
         
-           BeanVuelo BVvuelo = new BeanVuelo(idVuelo, hfSalida, hfLlegada, origen, destino,  aerolinea, tiempo, precio, nPuestos);
+           BeanVuelo BVvuelo = new BeanVuelo(idVuelo, FSalida, FLlegada, origen, destino, HSalida, HLlegada,  aerolinea, tiempo, precio, nPuestos);
            DAO_vuelo DVvuelo = new DAO_vuelo(BVvuelo);
            String mExito = "Operacion exitosa.";
            String mError = "Operacion Fallida.";
@@ -61,6 +63,7 @@ public class ServletVuelo extends HttpServlet {
            switch(opcion)
             {
             case 1:// AGREGAR REGISTROS
+                
                 if(DVvuelo.agregarVuelo())
                     {
                      request.setAttribute("mensaje", mExito);
@@ -69,7 +72,7 @@ public class ServletVuelo extends HttpServlet {
                     {
                         request.setAttribute("mensaje", mError);
                     }
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.getRequestDispatcher("adminVuelo.jsp").forward(request, response);
             break;
             case 2://BORRAR REGISTROS
 
@@ -82,7 +85,7 @@ public class ServletVuelo extends HttpServlet {
                     {
                         request.setAttribute("mensaje", mError);
                     }                
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.getRequestDispatcher("adminVuelo.jsp").forward(request, response);
             break;    
             case 3:
                 if(DVvuelo.actualizarVuelo())
@@ -93,7 +96,7 @@ public class ServletVuelo extends HttpServlet {
                     {
                         request.setAttribute("mensaje", mError);
                     }
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.getRequestDispatcher("adminVuelo.jsp").forward(request, response);
             break;
         
             }
