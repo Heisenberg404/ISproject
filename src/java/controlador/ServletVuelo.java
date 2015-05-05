@@ -42,7 +42,11 @@ public class ServletVuelo extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        int opcion=Integer.parseInt(request.getParameter("txtOpcion"));
+ //       String insertar = request.getParameter("btnagregar");
+//        String eliminar = request.getParameter("btneliminar");
+//        String actualizar = request.getParameter("btnmodificar");
+//        String consultar = request.getParameter("btnbuscar");
+ //       String opcion="";
         String idVuelo = request.getParameter("txtIdVuelo");
         String FSalida = request.getParameter("txtFechaS");
         String FLlegada = request.getParameter("txtFechaL");
@@ -59,11 +63,24 @@ public class ServletVuelo extends HttpServlet {
            DAO_vuelo DVvuelo = new DAO_vuelo(BVvuelo);
            String mExito = "Operacion exitosa.";
            String mError = "Operacion Fallida.";
-           
-           switch(opcion)
-            {
-            case 1:// AGREGAR REGISTROS
-                
+//           if ("insertar".equals(request.getParameter("btnagregar")))
+//           {
+//               opcion = "1";
+//           }
+//           else if (eliminar.equals("btneliminar"))
+//           {
+//               opcion = "2";
+//           }
+//           else
+//           {
+//               opcion = "3";
+//           }
+//           
+//           
+//           switch(opcion)
+//            {
+//            case "1":// AGREGAR REGISTROS
+//                
                 if(DVvuelo.agregarVuelo())
                     {
                      request.setAttribute("mensaje", mExito);
@@ -73,33 +90,33 @@ public class ServletVuelo extends HttpServlet {
                         request.setAttribute("mensaje", mError);
                     }
                 request.getRequestDispatcher("adminVuelo.jsp").forward(request, response);
-            break;
-            case 2://BORRAR REGISTROS
-
-                
-                if(DVvuelo.borrarVuelo())
-                    {
-                    request.setAttribute("mensaje", mExito);
-                    }
-                else
-                    {
-                        request.setAttribute("mensaje", mError);
-                    }                
-                request.getRequestDispatcher("adminVuelo.jsp").forward(request, response);
-            break;    
-            case 3:
-                if(DVvuelo.actualizarVuelo())
-                    {
-                    request.setAttribute("mensaje", mExito);
-                    }
-                else
-                    {
-                        request.setAttribute("mensaje", mError);
-                    }
-                request.getRequestDispatcher("adminVuelo.jsp").forward(request, response);
-            break;
-        
-            }
+//            break;
+//            case "2"://BORRAR REGISTROS
+//
+//                
+//                if(DVvuelo.borrarVuelo())
+//                    {
+//                    request.setAttribute("mensaje", mExito);
+//                    }
+//                else
+//                    {
+//                        request.setAttribute("mensaje", mError);
+//                    }                
+//                request.getRequestDispatcher("adminVuelo.jsp").forward(request, response);
+//            break;    
+//            case "3":
+//                if(DVvuelo.actualizarVuelo())
+//                    {
+//                    request.setAttribute("mensaje", mExito);
+//                    }
+//                else
+//                    {
+//                        request.setAttribute("mensaje", mError);
+//                    }
+//                request.getRequestDispatcher("adminVuelo.jsp").forward(request, response);
+//            break;
+//        
+//            }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
