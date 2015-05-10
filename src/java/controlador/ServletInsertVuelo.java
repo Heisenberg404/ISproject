@@ -5,31 +5,30 @@
  */
 package controlador;
 
+import EJB.ejbVuelo;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.Date;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Bean.BeanUsuario;
-import DAO.DAO_usuario;
 
 /**
  *
  * @author Andres Montoya
  */
-@WebServlet(name = "ServletUsuario", urlPatterns = {"/ServletUsuario"})
-public class ServletUsuario extends HttpServlet {
+@WebServlet(name = "ServletInsertVuelo", urlPatterns = {"/ServletInsertVuelo"})
+public class ServletInsertVuelo extends HttpServlet {
 
+    
+    @EJB
+    private ejbVuelo ejbTVuelo;
     /**
-     * Processes requests for both HTTP
-     * <code>GET</code> and
-     * <code>POST</code> methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -39,33 +38,40 @@ public class ServletUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-           
-        String cedula = request.getParameter("txtcedula");
-        String nombre = request.getParameter("txtnombre");
-        String apellido = request.getParameter("txtapellido");
-        String email = request.getParameter("txtemail");
-        String telefono = request.getParameter("txttelefono");
-        String nombreTarjeta = request.getParameter("txt_nombre_t");
-        String numeroTarjeta = request.getParameter("txt_numero_t");
-        String banco = request.getParameter("txt_banco");
         
-        BeanUsuario BUusuario = new BeanUsuario(cedula, nombre, apellido, email, telefono, nombreTarjeta, numeroTarjeta, banco);
-        DAO_usuario DUsuario = new DAO_usuario(BUusuario);
-        String mExito = "Operacion exitosa.";
-        String mError = "Operacion Fallida.";
-        
-        if (DUsuario.agregarRegistro())
+        if(request.getMethod().equals("GET"))
+        {
+            request.getRequestDispatcher("InsertVuelo.jsp").forward(request, response);
+        }
+        if(request.getMethod().equals("POST"))
+        {
+            ejbTVuelo.gettVuelo().setIdvuelo(request.getParameter("txtIdVuelo"));
+            ejbTVuelo.gettVuelo().setFechaSalida(Date.valueOf(request.getParameter("txtFechaS")));
+            ejbTVuelo.gettVuelo().setFechaLlegada(Date.valueOf(request.getParameter("txtFechaL")));
+            ejbTVuelo.gettVuelo().setHoraSalida(request.getParameter("txtHoraS"));
+            ejbTVuelo.gettVuelo().setHoraLlegada(request.getParameter("txtHoraL"));
+            ejbTVuelo.gettVuelo().setOrigen(request.getParameter("txtOrigen"));
+            ejbTVuelo.gettVuelo().setDestino(request.getParameter("txtDestino"));
+            ejbTVuelo.gettVuelo().setTiempo_vuelo(new Integer (request.getParameter("txtTiempo")));
+            ejbTVuelo.gettVuelo().setAerolinea(request.getParameter("txtAerolinea"));
+            ejbTVuelo.gettVuelo().setN_puestos(new Integer (request.getParameter("txtN_puestos")));
+            ejbTVuelo.gettVuelo().setDestino(request.getParameter("txtDestino"));
+            
+            String mensaje_respuesta;
+            if(ejbTVuelo.insert())
             {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-            request.setAttribute("mensaje", mExito);
+                mensaje_respuesta="OK";
             }
-        else
+            else
             {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+                mensaje_respuesta="wrong";
             } 
-        
-        
+            request.setAttribute("mensaje", mensaje_respuesta);
+            request.getRequestDispatcher("resultadoAdmin.jsp").forward(request, response);
+            
+            
+            
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : adminVuelo
+    Document   : InsertVuelo
     Created on : 02-may-2015, 14:20:08
     Author     : Andres Montoya
 --%>
@@ -39,7 +39,7 @@
     <div id="latest">
         <div class="fl_center4">
             <div class="center"><b>INFORMACION DEL VUELO</b></div> <br> 
-            <form class="group-horizontal" action="ServletVuelo" method="Post">
+            <form class="group-horizontal" action="ServletInsertVuelo" method="post">
                 <div class="form-group">   
                     <div class="col-lg-5"><input class="form-control" name="txtIdVuelo" type="text" placeholder="Digite codigo de vuelo"/></div> 
                     <div class="col-lg-5"><input class="form-control fecha" name="txtFechaS"   type="text" placeholder="Digite la fecha de salida"/></div> <br> 
@@ -64,17 +64,14 @@
                     <div class="col-lg-5"><input class="form-control"  name="txtPrecio" type="text" placeholder="Digite el precio del vuelo"/></div> <br> 
                 </div><br><br>
                 <div class="form-group">  
-                    <div class="col-lg-3"><button class="btn-custom btn-lg" name="btnagregar" type="submit"><span class="glyphicon glyphicon-floppy-disk"></span> Agregar</button></div>
-                    <div class="col-lg-3"><button class="btn-custom btn-lg" name="btnbuscar" type="submit" ><span class="glyphicon glyphicon-search"></span> Buscar</button></div>
-                    <div class="col-lg-3"><button class="btn-custom btn-lg" name="btneliminar" type="submit"><span class="glyphicon glyphicon-remove"></span> Eliminar</button></div>
-                    <div class="col-lg-3"><button class="btn-custom btn-lg" name="btnmodificar" type="submit"><span class="glyphicon glyphicon-edit"></span> Modificar</button></div>
-                </div>
+                    <div class="col-lg-3"><button class="btn-custom btn-lg" id="btnAceptar" name="btnAceptar" type="submit"> Aceptar</button></div>
+                </div>    
+                
             </form>
         </div>
     <br class="clear" />
     </div>
 </div>
- 
 
 
 <div class="wrapper">

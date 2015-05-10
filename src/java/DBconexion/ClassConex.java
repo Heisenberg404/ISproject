@@ -1,5 +1,5 @@
 
-package util;
+package DBconexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

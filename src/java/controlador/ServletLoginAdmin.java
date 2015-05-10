@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Dao.DAO_IS_admin;
+import DAO.DAO_IS_admin;
 
 /**
  *
@@ -29,8 +29,7 @@ public class ServletLoginAdmin extends HttpServlet {
         
         if (Iadmin.validar(alias, pass))
         {
-            //es necesario cambiar el destino al que se enviara al usuario al momento de iniciar sesion!
-            request.getRequestDispatcher("adminVuelo.jsp").forward(request, response);
+            request.getRequestDispatcher("SeleccionAdmin.jsp").forward(request, response);
         }
         else
         {

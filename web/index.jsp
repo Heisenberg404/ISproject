@@ -8,7 +8,7 @@
 <body id="myBody">
     <div class="wrapper">
         <div id="header">
-            <div align="right"><h1>alexaTeAmo</h1></div>
+            <div align="right"><h1></h1></div>
             <div id="logo">
                 <a href="index.html"><img id="logo" src="images/EasyTicketsLogo.png" alt="" /></a>
             </div>

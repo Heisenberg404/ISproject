@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo.Dao;
+package DAO;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import util.ClassConex;
+import DBconexion.ClassConex;
 /**
  *
  * @author Andres Montoya

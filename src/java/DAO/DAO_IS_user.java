@@ -1,4 +1,4 @@
-package modelo.Dao;
+package DAO;
 
 /**
  *
@@ -8,7 +8,7 @@ package modelo.Dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import util.ClassConex;
+import DBconexion.ClassConex;
 
 public class DAO_IS_user extends ClassConex {
     

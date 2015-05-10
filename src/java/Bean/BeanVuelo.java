@@ -1,5 +1,7 @@
 
-package modelo.Bean;
+package Bean;
+
+import java.sql.Date;
 
 
 /**
@@ -9,8 +11,8 @@ package modelo.Bean;
 public class BeanVuelo {
     
     private String idvuelo;
-    private String fechaSalida;
-    private String fechaLlegada;
+    private Date fechaSalida;
+    private Date fechaLlegada;
     private String origen;
     private String destino;
     private String aerolinea;
@@ -20,7 +22,7 @@ public class BeanVuelo {
     private int precio;
     private int n_puestos;
 
-    public BeanVuelo(String idvuelo, String fechaSalida, String fechaLlegada, String origen, String destino, String horaSalida, String horaLlegada, String aerolinea,int tiempo_vuelo, int precio, int n_puestos) {
+    public BeanVuelo(String idvuelo, Date fechaSalida, Date fechaLlegada, int tiempo_vuelo, String origen, String destino, String aerolinea, int precio, int n_puestos, String horaSalida, String horaLlegada) {
         this.idvuelo = idvuelo;
         this.fechaSalida = fechaSalida;
         this.fechaLlegada = fechaLlegada;
@@ -33,6 +35,15 @@ public class BeanVuelo {
         this.precio = precio;
         this.n_puestos = n_puestos;
         
+    }
+    
+    public BeanVuelo()
+    {
+    }
+    
+    public BeanVuelo(String idVuelo)
+    {
+        this.idvuelo = idVuelo;
     }
     
     
@@ -54,38 +65,23 @@ public class BeanVuelo {
         this.idvuelo = idvuelo;
     }
 
-    public String getfechaSalida() {
+    public Date getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setfechaSalida(String salida) {
-        this.fechaSalida = salida;
-    }
-
-    public String getfechaLlegada() {
-        return fechaLlegada;
-    }
-
-    public void setfechaLlegada(String llegada) {
-        this.fechaLlegada = llegada;
-    }
-
-    public String getFechaSalida() {
-        return fechaSalida;
-    }
-
-    public void setFechaSalida(String fechaSalida) {
+    public void setFechaSalida(Date fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
-    public String getFechaLlegada() {
+    public Date getFechaLlegada() {
         return fechaLlegada;
     }
 
-    public void setFechaLlegada(String fechaLlegada) {
+    public void setFechaLlegada(Date fechaLlegada) {
         this.fechaLlegada = fechaLlegada;
     }
-
+    
+    
     public String getHoraSalida() {
         return horaSalida;
     }
