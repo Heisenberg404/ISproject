@@ -1,6 +1,6 @@
 <%-- 
-    Document   : adminVuelo
-    Created on : 02-may-2015, 14:20:08
+    Document   : updateVuelo
+    Created on : 11-may-2015, 16:50:47
     Author     : Andres Montoya
 --%>
 
@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>OpcionesVuelos</title>
+        <title>Vuelos</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
         <link rel="stylesheet" href="layout/styles/bootstrap/css/bootstrap.css" />
@@ -38,32 +38,41 @@
 <div class="wrapper">
     <div id="latest">
         <div class="fl_center4">
-            <div class="center"><b>Opciones de Administrador</b></div> <br> 
-            
+            <div class="center"><b>ACTUALIZAR VUELO</b></div> <br> 
+            <jsp:useBean id="ejbvuelo" scope="request" class="EJB.ejbVuelo" />
+            <form class="group-horizontal" action="ServletUpdateVuelo" method="post">
+                <div class="form-group">   
+                    <div class="col-lg-5"><input class="form-control" name="txtIdVuelo" type="text" readonly="readonly" value="${ejbvuelo.gettVuelo().idvuelo}"/></div> 
+                    <div class="col-lg-5"><input class="form-control fecha" name="txtFechaS"   type="text" value="${ejbvuelo.gettVuelo().fechaSalida}"/></div> <br> 
+                </div>
+                <div class="form-group">   
+                    <div class="col-lg-5"><input class="form-control fecha" name="txtFechaL" type="text" value="${ejbvuelo.gettVuelo().fechaLlegada}"/></div> 
+                    <div class="col-lg-5"><input class="form-control"  name="txtHoraS" type="text" value="${ejbvuelo.gettVuelo().horaSalida}"/></div> <br> 
+                </div>
+                <div class="form-group">   
+                    <div class="col-lg-5"><input class="form-control" name="txtHoraL" type="text" value="${ejbvuelo.gettVuelo().horaLlegada}"/></div> 
+                    <div class="col-lg-5"><input class="form-control"  name="txtOrigen" type="text" value="${ejbvuelo.gettVuelo().origen}"/></div> <br> 
+                </div>
+                <div class="form-group">   
+                    <div class="col-lg-5"><input class="form-control"  name="txtDestino" type="text" value="${ejbvuelo.gettVuelo().destino}"/></div> 
+                    <div class="col-lg-5"><input class="form-control"  name="txtTiempo" type="text" value="${ejbvuelo.gettVuelo().tiempo_vuelo}"/></div> <br> 
+                </div>
+                <div class="form-group">   
+                    <div class="col-lg-5"><input class="form-control"  name="txtAerolinea" type="text" value="${ejbvuelo.gettVuelo().aerolinea}"/></div> 
+                    <div class="col-lg-5"><input class="form-control"  name="txtN_puestos" type="text" value="${ejbvuelo.gettVuelo().n_puestos}"/></div> <br> 
+                </div>
+                <div class="form-group">   
+                    <div class="col-lg-5"><input class="form-control"  name="txtPrecio" type="text" value="${ejbvuelo.gettVuelo().precio}"/></div> <br> 
+                </div><br><br>
+                <div class="form-group">  
+                    <div class="col-lg-3"><button class="btn-custom btn-lg" id="btnAceptar" name="btnAceptar" type="submit"> Aceptar</button></div>
+                </div>    
                 
-                
-            <p> 
-                <label>
-                    <a href="ServletInsertVuelo">Insertar<span class="glyphicon glyphicon-floppy-disk"></span></a>
-                </label>  
-            </p>
-            <p>      
-                <label>
-                    <a href="#">Eliminar<span class="glyphicon glyphicon-remove"></span></a>
-                </label>
-            </p>
-            <p>      
-                <label>
-                    <a href="ServletRead">Consultar Todo<span class="glyphicon glyphicon-search"></span></a>
-                </label>
-            </p>
-                
-               
+            </form>
         </div>
     <br class="clear" />
     </div>
 </div>
-
 
 
 <div class="wrapper">

@@ -1,6 +1,7 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
-    Document   : adminVuelo
-    Created on : 02-may-2015, 14:20:08
+    Document   : getAllAdmin
+    Created on : 11-may-2015, 9:38:50
     Author     : Andres Montoya
 --%>
 
@@ -8,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>OpcionesVuelos</title>
+        <title>Lista de Vuelos</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
         <link rel="stylesheet" href="layout/styles/bootstrap/css/bootstrap.css" />
@@ -38,32 +39,49 @@
 <div class="wrapper">
     <div id="latest">
         <div class="fl_center4">
-            <div class="center"><b>Opciones de Administrador</b></div> <br> 
-            
-                
-                
-            <p> 
-                <label>
-                    <a href="ServletInsertVuelo">Insertar<span class="glyphicon glyphicon-floppy-disk"></span></a>
-                </label>  
-            </p>
-            <p>      
-                <label>
-                    <a href="#">Eliminar<span class="glyphicon glyphicon-remove"></span></a>
-                </label>
-            </p>
-            <p>      
-                <label>
-                    <a href="ServletRead">Consultar Todo<span class="glyphicon glyphicon-search"></span></a>
-                </label>
-            </p>
-                
-               
+            <div class="center"><b>INFORMACION DE LOS VUELO</b></div> <br> 
+            <jsp:useBean id="ejbTvuelo" scope="request" class="EJB.ejbVuelo" />
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th>ID VUELO</th>
+                        <th>FECHA SALIDA</th>
+                        <th>FECHA LLEGADA</th>
+                        <th>TIEMPO</th>
+                        <th>ORIGEN</th>
+                        <th>DESTINO</th>
+                        <th>AEROLINEA</th>
+                        <th>PRECIO</th>
+                        <th>NUMERO DE ASIENTOS</th>
+                        <th>HORA SALIDA</th>
+                        <th>HORA LLEGADA</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody><!--item es el nombre de iteraccion de la que dara la tabla para cada campo-->
+                <c:forEach var="item" items="${ejbTvuelo.listaVuelo}">
+                    <tr>
+                        <td>${item.getIdvuelo()}</td>
+                        <td>${item.getFechaSalida()}</td>
+                        <td>${item.getFechaLlegada()}</td>
+                        <td>${item.getTiempo_vuelo()}</td>
+                        <td>${item.getOrigen()}</td>
+                        <td>${item.getDestino()}</td>
+                        <td>${item.getAerolinea()}</td>
+                        <td>${item.getPrecio()}</td>
+                        <td>${item.getN_puestos()}</td>
+                        <td>${item.getHoraSalida()}</td>
+                        <td>${item.getHoraLlegada()}</td>
+                        <td><button id="${item.getIdvuelo()}" onclick="actualizar(this.id);">Editar</button></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+
         </div>
     <br class="clear" />
     </div>
 </div>
-
 
 
 <div class="wrapper">
@@ -102,4 +120,11 @@
     <script src="layout/styles/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="layout/styles/bootstrap/js/calendario.js"></script>
 </body>
+<script>
+    function actualizar(idProducto)
+    {
+        //esta instruccion ejecuta un redireccionamiento
+        window.location.href = "ServletUpdateVuelo?id_vuelo="+idProducto;        
+    }
+</script>
 </html>

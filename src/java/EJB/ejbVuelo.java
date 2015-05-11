@@ -48,10 +48,50 @@ public class ejbVuelo {
     
     return valor_retorno;
     }
+    
+     public boolean listarVuelos()
+    {
+        boolean valor_retorno; 
+        try 
+        {
+            conexion = Conexion.conexion();
+            listaVuelo=daoTVuelo.getAll(conexion);
+            conexion.close();
+            valor_retorno = true;
+        } 
+        catch (Exception e) 
+        {
+            valor_retorno=false;
+        }
+    
+    return valor_retorno;
+    }
+     
+    public boolean leerPorIdVuelo(String id_vuelo)
+    {
+        boolean valor_retorno; 
+        try 
+        {
+            conexion = Conexion.conexion();
+            tVuelo=daoTVuelo.getByCode(id_vuelo, conexion);
+            conexion.close();
+            valor_retorno = true;
+        } 
+        catch (Exception e) 
+        {
+            valor_retorno=false;
+        }
+    
+    return valor_retorno;
+    }
 
     public BeanVuelo gettVuelo() {
         return tVuelo;
     }
+    
+    
+    
+    
 
    
 
