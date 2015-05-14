@@ -38,28 +38,20 @@
 <div class="wrapper">
     <div id="latest">
         <div class="fl_center4">
-            <div class="center"><b>Opciones de Administrador</b></div> <br> 
-            
-                
-                
-            <p> 
-                <label>
-                    <a href="ServletInsertVuelo">Insertar<span class="glyphicon glyphicon-floppy-disk"></span></a>
-                </label>  
-            </p>
-            <p>      
-                <label>
-                    <a href="#">Eliminar<span class="glyphicon glyphicon-remove"></span></a>
-                </label>
-            </p>
-            <p>      
-                <label>
-                    <a href="ServletRead">Consultar Todo<span class="glyphicon glyphicon-search"></span></a>
-                </label>
-            </p>
-                
-               
-        </div>
+            <div class="center"><b>Opciones de Administrador</b></div> <br> <br>
+                <div class="row">
+                    <div class="col-sm-4 col-md-4">
+                        <a href="ServletInsertVuelo" ><img src="images/agregar.png" width="242px"><b>Insertar un vuelo</b></a>
+                    </div>  
+                    <br>
+                    <div class="col-sm-4 col-md-4">
+                        <a href="#"><img src="images/original_eliminar.jpg" width="282px"><br><b>Eliminar</b></a>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <a href="ServletRead"><img src="images/buscar.png" width="222px"><b>Consultar Todo</b></a>
+                    </div>
+                </div>    
+            </div>
     <br class="clear" />
     </div>
 </div>
@@ -83,12 +75,12 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6 col-md-6">
-                            <a href="loginAdmin.html" class="thumbnail">
+                            <a href="LoginAdmin.jsp" class="thumbnail">
                                 <img src="images/admin.jpg" alt="1">
                             </a>
                         </div>
                         <div class="col-sm-6 col-md-6">
-                            <a href="login.html" class="thumbnail">
+                            <a href="loginUser.jsp" class="thumbnail">
                                 <img src="images/cliente.jpg" alt="2">
                             </a>
                         </div>

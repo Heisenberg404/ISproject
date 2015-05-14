@@ -47,7 +47,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 
 /* ----------------------------------------------Header------------------------------------- */
 
-#header{display:block; position:relative; width:960px; margin:0 auto; padding:5px 20px 15px 20px; color:#DBDBDB; background-color:#232323; font-family:Georgia, "Times New Roman", Times, serif;}
+#header{display:block; position:relative; width:942.5px; margin:0 auto; padding:5px 10px 15px 20px; color:#DBDBDB; background-color:#232323; font-family:Georgia, "Times New Roman", Times, serif;}
 #header #logo{display:block; float:left; width:210px; margin-top:5px;}
 #header #logo h1, #header #logo p{margin:0; padding:0; line-height:normal;}
 #header #logo h1{margin:0; padding:0; font-size:42px; border:none; text-transform:uppercase;}

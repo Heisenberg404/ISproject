@@ -47,7 +47,7 @@
             </div>
             <p> 
                 <label>
-                    <a href="ServletInsertVuelo">Regresar</a>
+                    <a href="SeleccionAdmin.jsp">Regresar</a>
                 </label>  
             </p>
         </div>

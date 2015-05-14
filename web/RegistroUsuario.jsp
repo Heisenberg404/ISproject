@@ -25,7 +25,7 @@
       <ul>
         <li ><a href="redirect.jsp">Inicio</a></li>
         <li><a href="VerOferta.html">Consultar Ofertas</a></li>
-        <li class="active"><a href="login.html">Ingresar a mi cuenta</a></li>
+        <li class="active"><a href="#sesion" data-toggle="modal">Ingresar a mi cuenta</a></li>
       </ul>
     </div>
     <br class="clear" />
@@ -101,6 +101,30 @@
     <br class="clear" />
   </div>
 </div>
+      <div class="modal fade" id="sesion" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4><b>Seleccione su tipo de usuario</b></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <a href="loginAdmin.html" class="thumbnail">
+                                <img src="images/admin.jpg" alt="1">
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <a href="loginUser.jsp" class="thumbnail">
+                                <img src="images/cliente.jpg" alt="2">
+                            </a>
+                        </div>
+                   </div>
+                 </div>
+            </div>
+        </div>
+    </div>
     <script src="layout/styles/bootstrap/js/jquery.js"></script>
     <script src="layout/styles/bootstrap/js/bootstrap.min.js"></script>
     

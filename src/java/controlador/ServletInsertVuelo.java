@@ -61,13 +61,16 @@ public class ServletInsertVuelo extends HttpServlet {
             if(ejbTVuelo.insert())
             {
                 mensaje_respuesta="OK";
+                request.setAttribute("mensaje", "<script>alert('Registro ingresado con exito')</script>");
+            
             }
             else
             {
                 mensaje_respuesta="wrong";
+                request.setAttribute("mensaje", "<script>alert('Registro no ingresado con exito')</script>");
+            request.getRequestDispatcher("SeleccionAdmin.jsp").forward(request, response);
+            
             } 
-            request.setAttribute("mensaje", mensaje_respuesta);
-            request.getRequestDispatcher("resultadoAdmin.jsp").forward(request, response);
             
             
             
