@@ -8,6 +8,7 @@ package controlador;
 import EJB.ejbVuelo;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,6 +42,34 @@ public class ServletUpdateVuelo extends HttpServlet {
             ejbvuelo.leerPorIdVuelo(request.getParameter("id_vuelo"));
             request.setAttribute("ejbvuelo", ejbvuelo);
             request.getRequestDispatcher("updateVuelo.jsp").forward(request, response);
+        }
+        if (request.getMethod().equals("POST"))
+        {
+            ejbvuelo.gettVuelo().setIdvuelo(request.getParameter("txtIdVuelo"));
+            ejbvuelo.gettVuelo().setFechaSalida(Date.valueOf(request.getParameter("txtFechaS")));
+            ejbvuelo.gettVuelo().setFechaLlegada(Date.valueOf(request.getParameter("txtFechaL")));
+            ejbvuelo.gettVuelo().setHoraSalida(request.getParameter("txtHoraS"));
+            ejbvuelo.gettVuelo().setHoraLlegada(request.getParameter("txtHoraL"));
+            ejbvuelo.gettVuelo().setOrigen(request.getParameter("txtOrigen"));
+            ejbvuelo.gettVuelo().setDestino(request.getParameter("txtDestino"));
+            ejbvuelo.gettVuelo().setTiempo_vuelo(Integer.parseInt(request.getParameter("txtTiempo")));
+            ejbvuelo.gettVuelo().setAerolinea(request.getParameter("txtAerolinea"));
+            ejbvuelo.gettVuelo().setN_puestos(Integer.parseInt(request.getParameter("txtN_puestos")));
+            ejbvuelo.gettVuelo().setPrecio(Integer.parseInt(request.getParameter("txtPrecio")));
+            
+            String mensaje_respuesta;
+            if(ejbvuelo.actualizarVuelo())
+            {
+                mensaje_respuesta="OK";
+            }
+            else
+            {
+                mensaje_respuesta="wrong";
+            } 
+            request.setAttribute("mensaje", mensaje_respuesta);
+            request.getRequestDispatcher("resultadoAdmin.jsp").forward(request, response);
+            
+            
         }
         
     }

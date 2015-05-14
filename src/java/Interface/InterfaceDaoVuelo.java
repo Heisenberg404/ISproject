@@ -19,5 +19,6 @@ public interface InterfaceDaoVuelo {
     public BeanVuelo getByCode(String codigo_vuelo, Connection conexion)throws Exception;
     public List<BeanVuelo> getAll(Connection conexion)throws Exception;
     public boolean update(BeanVuelo tVuelo, Connection conexion)throws Exception;
-    public boolean insert(String codigo_vuelo, Connection conexion)throws Exception;
+   //cambiar por eliminar!!
+    public boolean delete(String codigo_vuelo, Connection conexion)throws Exception;
 }

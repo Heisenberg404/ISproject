@@ -97,11 +97,23 @@ public class DaoTVuelo implements Interface.InterfaceDaoVuelo {
 
     @Override
     public boolean update(BeanVuelo tVuelo, Connection conexion) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Statement statement;
+        String query = "update vuelo set fechaSalida='"+tVuelo.getFechaSalida()+"', fechaLlegada='"+tVuelo.getFechaLlegada()+"', tiempo='"+
+                        tVuelo.getTiempo_vuelo()+"', origen='"+tVuelo.getOrigen()+"', destino='"+tVuelo.getDestino()+"', aerolinea='"+tVuelo.getAerolinea()+
+                        "',precio='"+tVuelo.getPrecio()+"', numero_puestos='"+tVuelo.getN_puestos()+"',horaSalida='"+tVuelo.getHoraSalida()+
+                        "',horaLlegada='"+tVuelo.getHoraLlegada()+"where id_vuelo='"+tVuelo.getIdvuelo()+"'";
+        
+        statement = (Statement) conexion.createStatement();
+        statement.execute(query);
+        statement.close();
+        return true;
     }
+    
+    
+    
 
     @Override
-    public boolean insert(String codigo_vuelo, Connection conexion) throws Exception {
+    public boolean delete(String codigo_vuelo, Connection conexion) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

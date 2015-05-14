@@ -85,16 +85,29 @@ public class ejbVuelo {
     return valor_retorno;
     }
 
+    public boolean actualizarVuelo()
+    {
+        boolean valor_retorno; 
+        try 
+        {
+            conexion = Conexion.conexion();
+            daoTVuelo.update(tVuelo, conexion);
+            conexion.close();
+            valor_retorno = true;
+        } 
+        catch (Exception e) 
+        {
+            valor_retorno=false;
+        }
+    
+        return valor_retorno;
+    }
+    
     public BeanVuelo gettVuelo() {
         return tVuelo;
     }
     
     
-    
-    
-
-   
-
     public void settVuelo(BeanVuelo tVuelo) {
         this.tVuelo = tVuelo;
     }
