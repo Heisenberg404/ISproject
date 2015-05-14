@@ -8,7 +8,6 @@ package controlador;
 import EJB.ejbVuelo;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,11 +19,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Andres Montoya
  */
-@WebServlet(name = "ServletUpdateVuelo", urlPatterns = {"/ServletUpdateVuelo"})
-public class ServletUpdateVuelo extends HttpServlet {
-    @EJB 
-    private ejbVuelo ejbvuelo;
 
+
+@WebServlet(name = "ServletDelete", urlPatterns = {"/ServletDelete"})
+public class ServletDelete extends HttpServlet {
+    
+    @EJB
+    private ejbVuelo _ejbVuelo;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,43 +38,21 @@ public class ServletUpdateVuelo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        if (request.getMethod().equals("GET"))
+        
+        if(request.getMethod().equals("GET"))
         {
-            ejbvuelo.leerPorIdVuelo(request.getParameter("id_vuelo"));
-            request.setAttribute("ejbvuelo", ejbvuelo);
-            request.getRequestDispatcher("updateVuelo.jsp").forward(request, response);
-        }
-        if (request.getMethod().equals("POST"))
-        {
-            ejbvuelo.gettVuelo().setIdvuelo(request.getParameter("txtIdVuelo"));
-            ejbvuelo.gettVuelo().setFechaSalida(Date.valueOf(request.getParameter("txtFechaS")));
-            ejbvuelo.gettVuelo().setFechaLlegada(Date.valueOf(request.getParameter("txtFechaL")));
-            ejbvuelo.gettVuelo().setHoraSalida(request.getParameter("txtHoraS"));
-            ejbvuelo.gettVuelo().setHoraLlegada(request.getParameter("txtHoraL"));
-            ejbvuelo.gettVuelo().setOrigen(request.getParameter("txtOrigen"));
-            ejbvuelo.gettVuelo().setDestino(request.getParameter("txtDestino"));
-            ejbvuelo.gettVuelo().setTiempo_vuelo(Integer.parseInt(request.getParameter("txtTiempo")));
-            ejbvuelo.gettVuelo().setAerolinea(request.getParameter("txtAerolinea"));
-            ejbvuelo.gettVuelo().setN_puestos(Integer.parseInt(request.getParameter("txtN_puestos")));
-            ejbvuelo.gettVuelo().setPrecio(Integer.parseInt(request.getParameter("txtPrecio")));
-            
-            String mensaje_respuesta;
-            if(ejbvuelo.actualizarVuelo())
+            String mensaje;
+            if(_ejbVuelo.deleteVuelo(request.getParameter("id_vuelo")))
             {
-                mensaje_respuesta="OK";
+            mensaje="Dato Borrado Correctamente";
             }
             else
             {
-                mensaje_respuesta="wrong";
-            } 
-            request.setAttribute("mensaje", mensaje_respuesta);
-            //aca debes decirle que se redireccione al formulario seleccionAdmin.jsp
-            //puesto que desde alli, si de va a hacer una nueva actulizacion se debe cargar la id del vuelo.
+            mensaje="Error Al Borrar";
+            }
+            request.setAttribute("mensaje", mensaje);
             request.getRequestDispatcher("resultadoAdmin.jsp").forward(request, response);
-            
-            
         }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

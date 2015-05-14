@@ -56,6 +56,7 @@
                         <th>HORA SALIDA</th>
                         <th>HORA LLEGADA</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody><!--item es el nombre de iteraccion de la que dara la tabla para cada campo-->
@@ -73,6 +74,7 @@
                         <td>${item.getHoraSalida()}</td>
                         <td>${item.getHoraLlegada()}</td>
                         <td><button id="${item.getIdvuelo()}" onclick="actualizar(this.id);">Editar</button></td>
+                        <td><button id="${item.getIdvuelo()}" onclick="borrar(this.id);">Borrar</button></td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -125,6 +127,12 @@
     {
         //esta instruccion ejecuta un redireccionamiento
         window.location.href = "ServletUpdateVuelo?id_vuelo="+idProducto;        
+    }
+    
+    function borrar(idProducto)
+    {
+        //esta instruccion ejecuta un redireccionamiento
+        window.location.href = "ServletDelete?id_vuelo="+idProducto;        
     }
 </script>
 </html>

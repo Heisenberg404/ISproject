@@ -103,6 +103,24 @@ public class ejbVuelo {
         return valor_retorno;
     }
     
+    public boolean deleteVuelo(String id_vuelo )
+    {
+        boolean valor_retorno; 
+        try 
+        {
+            conexion = Conexion.conexion();
+            daoTVuelo.delete(id_vuelo, conexion);
+            conexion.close();
+            valor_retorno = true;
+        } 
+        catch (Exception e) 
+        {
+            valor_retorno=false;
+        }
+    
+        return valor_retorno;
+    }
+    
     public BeanVuelo gettVuelo() {
         return tVuelo;
     }

@@ -45,9 +45,6 @@
                     </div>  
                     <br>
                     <div class="col-sm-4 col-md-4">
-                        <a href="#"><img src="images/original_eliminar.jpg" width="282px"><br><b>Eliminar</b></a>
-                    </div>
-                    <div class="col-sm-4 col-md-4">
                         <a href="ServletRead"><img src="images/buscar.png" width="222px"><b>Consultar Todo</b></a>
                     </div>
                 </div>    

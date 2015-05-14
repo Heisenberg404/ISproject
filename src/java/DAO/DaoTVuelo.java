@@ -98,11 +98,9 @@ public class DaoTVuelo implements Interface.InterfaceDaoVuelo {
     @Override
     public boolean update(BeanVuelo tVuelo, Connection conexion) throws Exception {
         Statement statement;
-        String query = "update vuelo set fechaSalida='"+tVuelo.getFechaSalida()+"', fechaLlegada='"+tVuelo.getFechaLlegada()+"', tiempo='"+
-                        tVuelo.getTiempo_vuelo()+"', origen='"+tVuelo.getOrigen()+"', destino='"+tVuelo.getDestino()+"', aerolinea='"+tVuelo.getAerolinea()+
-                        "',precio='"+tVuelo.getPrecio()+"', numero_puestos='"+tVuelo.getN_puestos()+"',horaSalida='"+tVuelo.getHoraSalida()+
-                        "',horaLlegada='"+tVuelo.getHoraLlegada()+"where id_vuelo='"+tVuelo.getIdvuelo()+"'";
-        
+        String query = "update vuelo set fechaSalida='"+tVuelo.getFechaSalida()+"',fechaLlegada='"+tVuelo.getFechaLlegada()+"',tiempo='"+tVuelo.getTiempo_vuelo()+"',origen='"+tVuelo.getOrigen()+"',destino='"+tVuelo.getDestino()+"',aerolinea='"+tVuelo.getAerolinea()+"',precio='"+tVuelo.getPrecio()+"',numero_puestos='"+tVuelo.getN_puestos()+"',horaSalida='"+tVuelo.getHoraSalida()+"',horaLlegada='"+tVuelo.getHoraLlegada()+"'where id_vuelo='"+tVuelo.getIdvuelo()+"';";
+                     //"insert into vuelo values('"+tVuelo.getIdvuelo()+"','"+tVuelo.getFechaSalida()+"','"+tVuelo.getFechaLlegada()+"','"+tVuelo.getTiempo_vuelo()+"','"+tVuelo.getOrigen()+"','"+tVuelo.getDestino()+"','"+tVuelo.getAerolinea()+"','"+tVuelo.getPrecio()+"','"+tVuelo.getN_puestos()+"','"+tVuelo.getHoraSalida()+"','"+tVuelo.getHoraLlegada()+"');";        
+//UPDATE `easytickets`.`vuelo` SET `precio`='115000' WHERE `id_vuelo`='a08';
         statement = (Statement) conexion.createStatement();
         statement.execute(query);
         statement.close();
@@ -113,8 +111,14 @@ public class DaoTVuelo implements Interface.InterfaceDaoVuelo {
     
 
     @Override
-    public boolean delete(String codigo_vuelo, Connection conexion) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean delete(String codigo_vuelo, Connection conexion) throws Exception 
+    {
+        Statement statement;
+        String query = "delete from vuelo where id_vuelo='"+codigo_vuelo+"';";
+        statement = (Statement) conexion.createStatement();
+        statement.execute(query);
+        statement.close();
+        return true;
     }
     
 }
